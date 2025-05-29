@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head><title>Scheduler</title></head>
+<body>
+<h1>Simple Scheduler</h1>
+<button onclick="schedule()">Add Schedule</button>
+<script>
+function schedule() {
+    fetch('/api/schedules', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ task: "Meeting", time: "10:00AM" })
+    }).then(res => res.json()).then(console.log);
+}
+</script>
+</body>
+</html>
